@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Maribu Blog</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header>
+  <div id="logo" onclick="slowScroll('#top')">
+    <span>MariBu</span>
+  </div>
+  <div id="about">
+    <a href="#" title="Работы" onclick="slowScroll('#main')">Работы</a>
+    <a href="#" onclick="slowScroll('#contacts')" title="Контакты">Контакты</a>
+  </div>
+</header>
+
+<div id="top">
+  <h1>Рисование</h1>
+  <h3>как способ жизни!</h3>
+</div>
+
+<div id="main">
+  <div class="intro">
+    <h2></h2>
+
+  </div>
+
+</div>
+
+<div id="overview">
+  <h2>Работы </h2>
+  <h4>Последние выполенные работы </h4>
+
+  <div class="img">
+    <img src="https://sun9-37.userapi.com/impg/QdJrDEbs3OBurA8cscXoJzcpL39A_fIA0s3i8A/OsPooJnQx0M.jpg?size=1044x1200&quality=96&sign=bd3916a40a8bfd3af3faceac02337140&type=album" alt="">
+  </div>
+  <div class="img">
+    <img src="https://sun9-53.userapi.com/impg/ZIGys7jQHE5pa2OUyR-ok-30L-L5wbxas4LYAw/Bt_wrzwKmEs.jpg?size=634x1200&quality=96&sign=b688ab870a8a199e503f21861faacdbc&type=album" alt="">
+  </div>
+</div>
+
+<div id="contacts">
+  <center><h5>Обратная связь</h5></center>
+  <form id="form_input">
+    <label for="name">Имя <span>*</span></label><br>
+    <input type="text" placeholder="Введите имя" name="name" id="name"><br>
+    <label for="email">Ваша почта <span>*</span></label><br>
+    <input type="email" placeholder="Введите email" name="email" id="email"><br>
+    <label for="message">Сообщение <span>*</span></label><br>
+    <textarea placeholder="Введите ваше сообщение" name="message" id="message"></textarea><br>
+    <div id="mess_send" class="btn">Отправить</div>
+  </form>
+</div>
+
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  function slowScroll(id) {
+    $('html, body').animate({
+      scrollTop: $(id).offset().top
+    }, 500);
+  }
+
+  $(document).on("scroll", function () {
+    if($(window).scrollTop() === 0)
+      $("header").removeClass("fixed");
+    else
+      $("header").attr("class", "fixed");
+  });
+</script>
+</body>
+</html>
